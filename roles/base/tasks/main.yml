@@ -1,0 +1,7 @@
+---
+
+#- name: get_bleeding_edge
+  #shell: pacman -Syu
+
+- name: update_cache
+  pacman: update_cache=yes
