@@ -1,7 +1,16 @@
 ---
 
-#- name: get_bleeding_edge
-  #shell: pacman -Syu
-
 - name: update_cache
   pacman: update_cache=yes
+
+- name: install_fish
+  pacman: name=fish state=present
+
+- name: create_group_admins
+  group: name=admins state=present
+
+- name: create_user_{{ username }}
+  user: name={{ username }} shell=/usr/bin/fish groups=admins
+
+- name: add_admins_to_sudoers
+  lineinfile: "dest=/etc/sudoers state=present regexp='^%admins' line='%admins ALL=(ALL) ALL'"
