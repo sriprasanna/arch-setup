@@ -15,7 +15,7 @@
   user: name={{ username }} shell=/usr/bin/fish groups=admins
 
 - name: add_admins_to_sudoers
-  lineinfile: "dest=/etc/sudoers state=present regexp='^%admins' line='%admins ALL=(ALL) ALL'"
+  lineinfile: "dest=/etc/sudoers state=present regexp='^%admins' line='%admins ALL=(ALL) NOPASSWD: ALL'"
 
 - name: install_yaourt_packages
   command: su - {{ username }} -c "yaourt -S {{ item }} --noconfirm"
