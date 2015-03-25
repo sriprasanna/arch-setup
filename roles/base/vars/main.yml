@@ -1,7 +1,16 @@
 ---
 # vars file for base
 pacman_packages:
-  - ['fish', 'wpa_supplicant', 'dialog', 'yaourt']
+  - ['fish', 'wpa_supplicant', 'dialog', 'yaourt', 'xorg-server', 'xorg-xinit', 'xorg-server-utils']
 
 yaourt_packages:
-  - ['broadcom-wl']
+  - ['broadcom-wl', 'linux-git', 'uswsusp-git', 'mesa-git', 'xf86-video-nouveau-git', 'alsa-utils', 'powertop-git', 'xf86-input-mtrack-git', 'i3-wm', 'i3lock', 'i3status']
+
+service_files:
+  - ['systemd-hibernate', 'powertop', 'suppress-gpe66', 'fixtrackpad@.service', 'i3lock']
+
+services:
+  - ['systemd-hibernate', 'powertop', 'suppress-gpe66', 'i3lock']
+
+modconf_files:
+  - ['i915', 'snd_hda_intel', 'usbcore']
