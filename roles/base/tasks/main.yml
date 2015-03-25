@@ -3,8 +3,10 @@
 - name: update_cache
   pacman: update_cache=yes
 
-- name: install_fish
-  pacman: name=fish state=present
+- name: install_pacman_packages
+  pacman: name={{ item }} state=present
+  with_flattened:
+    - pacman_packages
 
 - name: create_group_admins
   group: name=admins state=present
@@ -14,3 +16,8 @@
 
 - name: add_admins_to_sudoers
   lineinfile: "dest=/etc/sudoers state=present regexp='^%admins' line='%admins ALL=(ALL) ALL'"
+
+- name: install_yaourt_packages
+  command: su - {{ username }} -c "yaourt -S {{ item }} --noconfirm"
+  with_flattened:
+    - yaourt_packages
