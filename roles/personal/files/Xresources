@@ -1,0 +1,61 @@
+! Native Transparency
+URxvt*.transparent: true
+
+! URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
+URxvt*.shading: 110
+
+! scrollbar style - rxvt (default), plain (most compact), next, or xterm
+URxvt.scrollstyle: rxvt
+
+! do not scroll with output
+URxvt*scrollTtyOutput: false
+
+! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+URxvt*scrollWithBuffer: true
+
+! scroll back to the bottom on keypress
+URxvt*scrollTtyKeypress: true
+
+! disable scroll buffer
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
+
+! font
+URxvt.font: xft:monaco:size=10
+
+! set as login shell
+URxvt*loginShell: true
+
+! font spacing
+URxvt.letterSpace: -1
+
+! perl extensions
+URxvt.perl-ext-common: default,matcher,fullscreen,clipboard
+URxvt.perl-ext: default,url-select
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+! Clickable URLS
+URxvt.url-launcher: /usr/bin/firefox
+URxvt.matcher.button: 1
+URxvt.keysym.C-Delete: perl:matcher:last
+URxvt.keysym.M-Delete: perl:matcher:list
+URxvt.colorUL: #4682B4
+
+! Yankable URLS
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.url-select.underline: true
+
+! Fullscreen
+URxvt.keysym.F11: perl:fullscreen:switch
+
+! Font adjust
+URxvt.keysym.C-Up:     perl:font-size:increase
+URxvt.keysym.C-Down:   perl:font-size:decrease
+URxvt.keysym.C-S-Up:   perl:font-size:incglobal
+URxvt.keysym.C-S-Down: perl:font-size:decglobal
+
+! Copy - Paste
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste

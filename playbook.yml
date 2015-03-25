@@ -3,4 +3,5 @@
 
 - hosts: all
   roles:
-    - {role: base, tags: ['system', 'all'], sudo: yes}
+    - {role: base, tags: ['bootstrap', 'all'], sudo: yes}
+    - {role: personal, tags: ['personal', 'all'], sudo: yes, sudo_user: "{{ username }}"}

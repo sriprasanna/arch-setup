@@ -9,7 +9,7 @@ Vagrant.configure(2) do |config|
   config.vm.box = "arch-base"
   config.vm.box_url = "http://cloud.terry.im/vagrant/archlinux-x86_64.box"
   config.vm.provider "virtualbox" do |vb|
-    #vb.gui = true
+    vb.gui = true
     vb.memory = "2048"
   end
   config.vm.provision :ansible do |ansible|

@@ -52,9 +52,6 @@
 - name: update_mkinitcpio_conf
   copy: src=mkinitcpio.conf dest=/etc/mkinitcpio.conf
 
-- name: update_intramfs_image
-  command: mkinitcpio -p linux
-
 - name: set_services
   copy: src={{ item }}.service dest=/etc/systemd/system/{{ item }}.service mode=644
   with_flattened:
@@ -73,5 +70,10 @@
   with_flattened:
     - modconf_files
 
-- name: set_touchpad
-  copy: src=60-mtrack.conf dest=/etc/X11/xorg.conf.d/60-mtrack.conf
+- name: set_xorg_files
+  copy: src={{ item }}.conf dest=/etc/X11/xorg.conf.d/{{ item }}.conf
+  with_flattened:
+    - xorg_files
+
+- name: update_intramfs_image
+  command: mkinitcpio -p linux
