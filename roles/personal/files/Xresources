@@ -1,3 +1,4 @@
+! color config here - https://gist.github.com/liangzan/1643690
 ! Native Transparency
 URxvt*.transparent: true
 
