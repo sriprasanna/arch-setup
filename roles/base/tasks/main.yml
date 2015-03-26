@@ -22,58 +22,10 @@
   with_flattened:
     - yaourt_packages
 
-- name: allocate_swap
-  command: fallocate -l 8G /swapfile
-  args:
-    creates: /swapfile
+- name: check_if_bootstrapped
+  shell: cat /etc/mkinitcpio.conf | grep nouveau
+  register: bootstrapped
+  ignore_errors: yes
 
-- name: set_swapfile_mode
-  file: path=/swapfile mode=600
-
-- name: make_swap
-  command: mkswap /swapfile
-
-- name: add_swap_to_fstab
-  lineinfile: dest=/etc/fstab line="/swapfile   swap    swap    defaults    0   0"
-
-- name: disable_swapfile
-  copy: src=99-disable-swapfile.conf dest=/etc/sysctl.d/99-disable-swapfile.conf
-
-- name: swap_op
-  command: swapon -a
-
-- name: get_swap_offset
-  command: swap-offset /swapfile
-  register: swap_offset
-
-- name: add_suspend_conf
-  template: src=suspend.conf dest=/etc/suspend.conf
-
-- name: update_mkinitcpio_conf
-  copy: src=mkinitcpio.conf dest=/etc/mkinitcpio.conf
-
-- name: set_services
-  copy: src={{ item }}.service dest=/etc/systemd/system/{{ item }}.service mode=644
-  with_flattened:
-    - service_files
-
-- name: enable_services
-  service: name={{ item }} state=started enabled=yes
-  with_flattened:
-    - services
-
-- name: enable_fixtrackpad_services
-  service: name=fixtrackpad@{{ username }} state=started enabled=yes
-
-- name: set_mod_conf
-  copy: src={{ item }}.conf dest=/etc/modprobe.d/{{ item }}.conf
-  with_flattened:
-    - modconf_files
-
-- name: set_xorg_files
-  copy: src={{ item }}.conf dest=/etc/X11/xorg.conf.d/{{ item }}.conf
-  with_flattened:
-    - xorg_files
-
-- name: update_intramfs_image
-  command: mkinitcpio -p linux
+- include: bootstrap.yml
+  when: "bootstrapped.rc != 0"
