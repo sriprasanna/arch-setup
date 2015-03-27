@@ -4,7 +4,7 @@ pacman_packages:
   - ['yaourt']
 
 yaourt_packages:
-  - ['broadcom-wl', 'uswsusp-git', 'mesa-git', 'xf86-video-nouveau-git', 'alsa-utils', 'powertop-git', 'xf86-input-mtrack-git', 'fish', 'wpa_supplicant', 'dialog', 'xorg-server', 'xorg-xinit', 'xorg-server-utils']
+  - ['broadcom-wl', 'uswsusp', 'mesa', 'xf86-video-nouveau', 'alsa-utils', 'powertop', 'xf86-input-mtrack', 'fish', 'wpa_supplicant', 'dialog', 'xorg-server', 'xorg-xinit', 'xorg-server-utils']
 
 service_files:
   - ['systemd-hibernate', 'powertop', 'suppress-gpe66', 'fixtrackpad@.service', 'i3lock']

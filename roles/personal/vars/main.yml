@@ -4,7 +4,7 @@ pacman_packages:
   - []
 
 yaourt_packages:
-  - ['rcm', 'xbindkeys', 'xorg-xbacklight', 'kbdlight', 'ttf-inconsolata', 'rxvt-unicode', 'urxvt-perls', 'urxvt-fullscreen', 'urxvt-font-size-git', 'xsel', 'xdg-utils', 'i3-wm', 'i3lock', 'i3status', 'j4-dmenu-desktop-git', 'firefox']
+  - ['rcm', 'xbindkeys', 'xorg-xbacklight', 'kbdlight', 'ttf-inconsolata', 'rxvt-unicode', 'urxvt-perls', 'urxvt-fullscreen', 'urxvt-font-size', 'xsel', 'xdg-utils', 'i3-wm', 'i3lock', 'i3status', 'j4-dmenu-desktop', 'firefox']
 
 rc_files:
   - ['xinitrc', 'xbindkeysrc', 'Xresources']
