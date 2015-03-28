@@ -1,5 +1,14 @@
 ---
 
+- name: check_if_archlinuxfr_present
+  shell: cat /etc/pacman.conf | grep archlinuxfr
+  register: archlinuxfr_repo_added
+  ignore_errors: yes
+
+- name: add_archlinuxfr_repo
+  lineinfile: dest=/etc/pacman.conf state=present line="[archlinuxfr]\nSigLevel = Never\nServer = http://repo.archlinux.fr/$arch"
+  when: "archlinuxfr_repo_added.rc != 0"
+
 - name: update_cache
   pacman: update_cache=yes
 
@@ -17,10 +26,18 @@
 - name: add_admins_to_sudoers
   lineinfile: "dest=/etc/sudoers state=present regexp='^%admins' line='%admins ALL=(ALL) NOPASSWD: ALL'"
 
-- name: install_yaourt_packages
-  command: su - {{ username }} -c "yaourt -S {{ item }} --noconfirm"
-  with_flattened:
-    - yaourt_packages
+- name: check_if_yaourt_packages_are_already_installed
+  command: pacman -Q {{item}}
+  register: packages_presence
+  with_items: yaourt_packages
+  ignore_errors: yes
+  changed_when: "packages_presence|failed"
+
+- name: install_package_if_necessary
+  command: yaourt -S {{item.item}} --noconfirm
+  sudo_user: "{{ username }}"
+  when: item|failed
+  with_items: packages_presence.results
 
 - name: check_if_bootstrapped
   shell: cat /etc/mkinitcpio.conf | grep nouveau

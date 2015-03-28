@@ -27,9 +27,6 @@
 - name: add_suspend_conf
   template: src=suspend.conf dest=/etc/suspend.conf
 
-- name: update_mkinitcpio_conf
-  copy: src=mkinitcpio.conf dest=/etc/mkinitcpio.conf
-
 - name: set_services
   copy: src={{ item }}.service dest=/etc/systemd/system/{{ item }}.service mode=644
   with_flattened:
@@ -52,6 +49,9 @@
   copy: src={{ item }}.conf dest=/etc/X11/xorg.conf.d/{{ item }}.conf
   with_flattened:
     - xorg_files
+
+- name: update_mkinitcpio_conf
+  copy: src=mkinitcpio.conf dest=/etc/mkinitcpio.conf
 
 - name: update_intramfs_image
   command: mkinitcpio -p linux

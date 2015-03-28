@@ -2,6 +2,7 @@
 # file: site.yml
 
 - hosts: all
+  gather_facts: no
   roles:
     - {role: base, tags: ['bootstrap', 'all'], sudo: yes}
     - {role: personal, tags: ['personal', 'all'], sudo: yes, sudo_user: "{{ username }}"}

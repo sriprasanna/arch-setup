@@ -1,15 +1,5 @@
 ---
 
-- name: install_pacman_packages
-  pacman: name={{ item }} state=present
-  with_flattened:
-    - pacman_packages
-
-- name: install_yaourt_packages
-  command: yaourt -S {{ item }} --noconfirm
-  with_flattened:
-    - yaourt_packages
-
 - name: set_rcfiles
   copy: src={{ item }} dest=/home/{{ username }}/.{{ item }}
   with_flattened:
