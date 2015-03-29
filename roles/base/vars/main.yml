@@ -9,8 +9,11 @@ yaourt_packages:
 service_files:
   - ['systemd-hibernate', 'powertop', 'suppress-gpe66', 'fixtrackpad@', 'i3lock']
 
-services:
+enable_services:
   - ['systemd-hibernate', 'powertop', 'suppress-gpe66', 'i3lock', 'thermald']
+
+start_services:
+  - ['powertop', 'suppress-gpe66', 'i3lock', 'thermald']
 
 modconf_files:
   - ['i915', 'snd_hda_intel', 'usbcore']
