@@ -10,3 +10,14 @@
 
 - name: set_i3config
   copy: src=i3config dest=/home/{{ username }}/.i3/config
+
+- name: create_i3scripts
+  file: path=/home/{{ username }}/.i3scripts state=directory
+
+- name: set_i3_scripts
+  copy: src={{ item }} dest=/home/{{ username }}/.i3scripts/{{ item }} mode="a+x"
+  with_flattened:
+    - i3_scripts
+
+- name: set_i3blocks
+  copy: src=i3blocks.conf dest=/home/{{ username }}/.i3blocks.conf
