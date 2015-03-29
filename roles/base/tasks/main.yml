@@ -74,3 +74,9 @@
 
 - include: bootstrap.yml
   when: "bootstrapped.rc != 0"
+
+- name: update_mkinitcpio_conf
+  copy: src=mkinitcpio.conf dest=/etc/mkinitcpio.conf
+
+- name: update_intramfs_image
+  command: mkinitcpio -p linux
