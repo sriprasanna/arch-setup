@@ -4,7 +4,7 @@ pacman_packages:
   - ['yaourt']
 
 yaourt_packages:
-  - ['broadcom-wl', 'uswsusp-git', 'mesa', 'xf86-video-nouveau', 'alsa-utils', 'powertop', 'xf86-input-synaptics', 'fish', 'wpa_supplicant', 'dialog', 'xorg-server', 'xorg-xinit', 'xorg-server-utils', 'rcm', 'xbindkeys', 'xorg-xbacklight', 'kbdlight', 'ttf-inconsolata', 'rxvt-unicode', 'urxvt-perls', 'urxvt-fullscreen', 'urxvt-font-size-git', 'xsel', 'xdg-utils', 'i3-wm', 'i3lock', 'i3status', 'j4-dmenu-desktop', 'firefox', 'htop', 'mbpfan-git', 'networkmanager', 'network-manager-applet', 'thermald', 'fontconfig-infinality']
+  - ['broadcom-wl', 'uswsusp-git', 'mesa', 'xf86-video-nouveau', 'alsa-utils', 'powertop', 'xf86-input-synaptics', 'fish', 'wpa_supplicant', 'dialog', 'xorg-server', 'xorg-xinit', 'xorg-server-utils', 'rcm', 'xbindkeys', 'xorg-xbacklight', 'kbdlight', 'ttf-inconsolata', 'rxvt-unicode', 'urxvt-perls', 'urxvt-fullscreen', 'urxvt-font-size-git', 'xsel', 'xdg-utils', 'i3-wm', 'i3lock', 'i3status', 'j4-dmenu-desktop', 'firefox', 'htop', 'mbpfan-git', 'networkmanager', 'network-manager-applet', 'thermald', 'fontconfig-infinality', 'speedometer']
 
 service_files:
   - ['systemd-hibernate', 'powertop', 'suppress-gpe66', 'fixtrackpad@', 'i3lock']
