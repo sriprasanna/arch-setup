@@ -39,6 +39,29 @@
   when: item|failed
   with_items: packages_presence.results
 
+- name: set_services
+  copy: src={{ item }}.service dest=/etc/systemd/system/{{ item }}.service mode=644
+  with_flattened:
+    - service_files
+
+- name: enable_services
+  service: name={{ item }} state=started enabled=yes
+  with_flattened:
+    - services
+
+- name: enable_fixtrackpad_services
+  service: name=fixtrackpad@{{ username }} state=started enabled=yes
+
+- name: set_mod_conf
+  copy: src={{ item }}.conf dest=/etc/modprobe.d/{{ item }}.conf
+  with_flattened:
+    - modconf_files
+
+- name: set_xorg_files
+  copy: src={{ item }}.conf dest=/etc/X11/xorg.conf.d/{{ item }}.conf
+  with_flattened:
+    - xorg_files
+
 - name: check_if_bootstrapped
   shell: cat /etc/mkinitcpio.conf | grep nouveau
   register: bootstrapped
