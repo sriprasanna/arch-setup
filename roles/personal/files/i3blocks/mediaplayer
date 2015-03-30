@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+
+################################
+# Shows info from media players.
+#
+# Dependencies:
+# - playerctl
+################################
+
+full=""
+short=""
+color=""
+status=0
+
+
+# Exit if no player found
+players=`playerctl -l`
+if [[ ! $players ]]; then exit 0; fi
+
+
+artist=`playerctl metadata artist`
+title=`playerctl metadata title`
+album=`playerctl metadata album`
+state=`playerctl status`
+
+
+if [[ $title ]]; then
+	# Determine which status icon to use
+	declare -A icons
+	icons=( ["Playing"]="" ["Paused"]="" ["Stopped"]="" )
+	icon=${icons[$state]}
+
+
+	if [[ $status == "Playing" ]]; then
+		# Add an icon if playing
+		echo -n "  "
+	else
+		# Use a different color if not playing
+		color="#fff000"
+	fi
+
+
+	full="$album: $artist - $title $icon"
+	short="$artist - $title $icon"
+else
+	# Handle when nothing is playing
+	full="Nothing playing"
+	short="∅"
+fi
+
+
+echo $full
+echo $short
+echo $color
+exit $status

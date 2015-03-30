@@ -4,4 +4,4 @@ rc_files:
   - ['xinitrc', 'xbindkeysrc', 'Xresources']
 
 i3_scripts:
-  - ['bandwidth.sh']
+  - ['bandwidth']
