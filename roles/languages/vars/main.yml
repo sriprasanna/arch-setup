@@ -1,4 +1,4 @@
 ---
 
 yaourt_packages:
-  - ['rbenv', 'jdk8-openjdk', 'intellij-idea-community-edition']
+  - ['rbenv', 'ruby-build', 'jdk8-openjdk', 'intellij-idea-community-edition']
