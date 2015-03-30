@@ -9,6 +9,11 @@
 
 - name: install_package_if_necessary
   command: yaourt -S {{item.item}} --noconfirm
-  sudo_user: "{{ username }}"
   when: item|failed
   with_items: packages_presence.results
+
+- name: clone_rbenv
+  git: repo=git://github.com/sstephenson/rbenv.git dest=/home/{{ username }}/.rbenv
+
+- name: clone_ruby_build
+  git: repo=git://github.com/sstephenson/ruby-build.git dest=/home/{{ username }}/.rbenv/plugins/ruby-build

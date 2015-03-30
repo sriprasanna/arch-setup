@@ -9,6 +9,5 @@
 
 - name: install_package_if_necessary
   command: yaourt -S {{item.item}} --noconfirm
-  sudo_user: "{{ username }}"
   when: item|failed
   with_items: packages_presence.results
