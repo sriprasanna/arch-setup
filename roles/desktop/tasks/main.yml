@@ -1,0 +1,14 @@
+---
+
+- name: check_if_yaourt_packages_are_already_installed
+  command: pacman -Q {{item}}
+  register: packages_presence
+  with_items: yaourt_packages
+  ignore_errors: yes
+  changed_when: "packages_presence|failed"
+
+- name: install_package_if_necessary
+  command: yaourt -S {{item.item}} --noconfirm
+  sudo_user: "{{ username }}"
+  when: item|failed
+  with_items: packages_presence.results
