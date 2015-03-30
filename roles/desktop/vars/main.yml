@@ -1,4 +1,4 @@
 ---
 
 yaourt_packages:
-  - ['firefox', 'flashplugin', 'dropbox', 'skype42']
+  - ['firefox', 'flashplugin', 'dropbox', 'skype42', 'libreoffice-fresh', 'thunderbird', 'pidgin']
