@@ -9,6 +9,15 @@
   lineinfile: dest=/etc/pacman.conf state=present line="[archlinuxfr]\nSigLevel = Never\nServer = http://repo.archlinux.fr/$arch"
   when: "archlinuxfr_repo_added.rc != 0"
 
+- name: check_if_multilib_enabled
+  shell: cat /etc/pacman.conf | grep '^\[multilib\]'
+  register: multilib_enabled
+  ignore_errors: yes
+
+- name: enable_multilib
+  lineinfile: dest=/etc/pacman.conf state=present line="[multilib]\nInclude = /etc/pacman.d/mirrorlist"
+  when: "multilib_enabled.rc != 0"
+
 - name: update_cache
   pacman: update_cache=yes
 
