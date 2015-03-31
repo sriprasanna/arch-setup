@@ -7,4 +7,4 @@
     - {role: base, tags: ['bootstrap', 'all'], sudo: yes}
     - {role: personal, tags: ['personal', 'all'], sudo: yes, sudo_user: "{{ username }}"}
     - {role: desktop, tags: ['desktop', 'all'], remote_user: "{{ username }}"}
-    - {role: languages, tags: ['languages', 'all'], remote_user: "{{ username }}"}
+    - {role: programming, tags: ['programming', 'all'], remote_user: "{{ username }}"}
