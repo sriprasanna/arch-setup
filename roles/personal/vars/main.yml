@@ -5,3 +5,6 @@ rc_files:
 
 i3_scripts:
   - ['bandwidth']
+
+user_configs:
+  - ['gpg-agent']

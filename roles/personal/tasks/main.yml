@@ -19,3 +19,8 @@
 
 - name: set_i3blocks
   copy: src=i3blocks.conf dest=/home/{{ username }}/.i3blocks.conf
+
+- name: set_user_config
+  copy: src={{ item }} dest=/home/{{ username }}/.config/systemd/user/{{ item }}.service
+  with_flattened:
+    - user_configs
