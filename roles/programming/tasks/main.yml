@@ -12,6 +12,19 @@
   when: item|failed
   with_items: packages_presence.results
 
+- name: create_postgres_db
+  shell: "su - postgres -c \"initdb --locale en_US.UTF-8 -D '/var/lib/postgres/data'\""
+  sudo: yes
+  args:
+    creates: /var/lib/postgres/data
+
+- name: enable_services
+  service: name={{ item }} enabled=yes state=started
+  sudo: yes
+  with_flattened:
+    - enable_services
+
+
 - name: clone_rbenv
   git: repo=git://github.com/sstephenson/rbenv.git dest=/home/{{ username }}/.rbenv
 
