@@ -19,4 +19,4 @@ modconf_files:
   - ['i915', 'snd_hda_intel', 'usbcore']
 
 xorg_files:
-  - ['50-synaptics', '10-keymap']
+  - ['50-synaptics', '10-keymap', '20-nouveau']
