@@ -11,3 +11,6 @@
   command: yaourt -S {{item.item}} --noconfirm
   when: item|failed
   with_items: packages_presence.results
+
+- name: enable_pulseaudio
+  command: systemctl --user enable pulseaudio.socket
