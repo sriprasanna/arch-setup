@@ -38,22 +38,16 @@
   file: path=/home/{{ username }}/.config/systemd/user state=directory
 
 - name: fix_keyboard_permissions
-  copy: src=01-keyboard.start dest=/etc/local.d/01-keyboard.start mode="a+x"
+  copy: src=keyboard-permissions.sh dest=/etc/profile.d/keyboard-permissions.sh mode="a+x"
   sudo_user: root
+  sudo: yes
 
 - name: fix_hw_lights
   copy: src={{ item }} dest=/usr/bin/{{ item }} mode="a+x"
   sudo_user: root
+  sudo: yes
   with_flattened:
     - hw_light_files
-
-- name: turn_off_backlight_when_screen_closed
-  copy: src=acpi-default.sh dest=/etc/acpi/default.sh
-  sudo_user: root
-
-- name: give_root_permission_to_xset
-  copy: src=xhost dest=/etc/X11/xinit/xinitrc.d/00-xhost
-  sudo_user: root
 
 - name: set_user_config
   template: src={{ item }}.service dest=/home/{{ username }}/.config/systemd/user/{{ item }}.service
