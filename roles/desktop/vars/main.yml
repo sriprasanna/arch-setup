@@ -2,3 +2,12 @@
 
 yaourt_packages:
   - ['firefox', 'firefox-firebug', 'firefox-adblock-plus', 'chromium', 'flashplugin', 'dropbox', 'libreoffice-fresh', 'thunderbird', 'pidgin', 'gnupg', 'skype', 'vlc', 'pulseaudio', 'apulse', 'octave']
+
+rc_files:
+  - ['xinitrc', 'xbindkeysrc', 'Xresources']
+
+i3_scripts:
+  - ['bandwidth']
+
+user_configs:
+  - ['gpg-agent']
