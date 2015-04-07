@@ -37,13 +37,15 @@
 - name: create_user_config_directory
   file: path=/home/{{ username }}/.config/systemd/user state=directory
 
-- name: fix_gmux_backlight
-  file: path=/sys/class/backlight/gmux_backlight/brightness mode="a+w"
+- name: fix_keyboard_permissions
+  copy: src=01-keyboard.start dest=/etc/local.d/01-keyboard.start mode="a+x"
   sudo_user: root
 
-- name: fix_backlight
-  copy: src=bl-brightness dest=/usr/bin/bl-brightness mode="a+x"
+- name: fix_hw_lights
+  copy: src={{ item }} dest=/usr/bin/{{ item }} mode="a+x"
   sudo_user: root
+  with_flattened:
+    - hw_light_files
 
 - name: set_user_config
   template: src={{ item }}.service dest=/home/{{ username }}/.config/systemd/user/{{ item }}.service

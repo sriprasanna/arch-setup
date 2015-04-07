@@ -13,8 +13,8 @@
 "/usr/bin/bl-brightness up"
   XF86MonBrightnessUp
 
-"kbdlight up"
+"/usr/bin/kb-brightness up"
   XF86KbdBrightnessUp
 
-"kbdlight down"
+"/usr/bin/kb-brightness down"
   XF86KbdBrightnessDown

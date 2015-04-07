@@ -11,3 +11,6 @@ i3_scripts:
 
 user_configs:
   - ['gpg-agent']
+
+hw_light_files:
+  - ['bl-brightness', 'kb-brightness']
