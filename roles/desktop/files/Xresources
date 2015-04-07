@@ -79,7 +79,7 @@ URxvt.secondaryScroll: 0
 
 ! font
 URxvt*font:  xft:inconsolata:size=18:antialias=true
-dmenu.font: inconsolata-18
+dmenu.font: inconsolata-20
 
 ! set as login shell
 URxvt*loginShell: true
