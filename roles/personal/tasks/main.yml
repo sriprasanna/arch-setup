@@ -23,6 +23,14 @@
 - name: create_user_config_directory
   file: path=/home/{{ username }}/.config/systemd/user state=directory
 
+- name: fix_gmux_backlight
+  file: path=/sys/class/backlight/gmux_backlight/brightness mode="a+w"
+  sudo_user: root
+
+- name: fix_backlight
+  copy: src=bl-brightness dest=/usr/bin/bl-brightness mode="a+x"
+  sudo_user: root
+
 - name: set_user_config
   template: src={{ item }}.service dest=/home/{{ username }}/.config/systemd/user/{{ item }}.service
   with_flattened:

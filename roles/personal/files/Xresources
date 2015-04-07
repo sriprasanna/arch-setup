@@ -1,3 +1,8 @@
+Xft.dpi:       160
+Xft.antialias: 1
+Xft.hinting:   1
+Xft.hintstyle: hintfull
+Xft.rgba:      rgb
 ! color config here - https://gist.github.com/bohoomil/5253661
 !! euphrasia v2 by bohoomil
 

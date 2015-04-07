@@ -7,10 +7,10 @@
 "amixer set Master toggle"
     XF86AudioMute
 
-"xbacklight -dec 10"
+"/usr/bin/bl-brightness down"
   XF86MonBrightnessDown
 
-"xbacklight -inc 10"
+"/usr/bin/bl-brightness up"
   XF86MonBrightnessUp
 
 "kbdlight up"
