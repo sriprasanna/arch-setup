@@ -47,6 +47,14 @@
   with_flattened:
     - hw_light_files
 
+- name: turn_off_backlight_when_screen_closed
+  copy: src=acpi-default.sh dest=/etc/acpi/default.sh
+  sudo_user: root
+
+- name: give_root_permission_to_xset
+  copy: src=xhost dest=/etc/X11/xinit/xinitrc.d/00-xhost
+  sudo_user: root
+
 - name: set_user_config
   template: src={{ item }}.service dest=/home/{{ username }}/.config/systemd/user/{{ item }}.service
   with_flattened:
