@@ -12,6 +12,10 @@
   when: item|failed
   with_items: packages_presence.results
 
+- name: symlink_ack
+  file: src=/usr/bin/vendor_perl/ack dest=/usr/bin/ack state=link
+  sudo: yes
+
 - name: enable_pulseaudio
   command: systemctl --user enable pulseaudio.socket
 
