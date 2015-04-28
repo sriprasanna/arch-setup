@@ -16,6 +16,14 @@
   file: src=/usr/bin/vendor_perl/ack dest=/usr/bin/ack state=link
   sudo: yes
 
+- name: create_pinentry_folder
+  file: path=/usr/local/MacGPG2/libexec/pinentry-mac.app/Contents/MacOS/ state=directory
+  sudo: yes
+
+- name: symlink_pinentry
+  file: src=/usr/bin/pinentry-gtk-2 dest=/usr/local/MacGPG2/libexec/pinentry-mac.app/Contents/MacOS/pinentry-mac state=link
+  sudo: yes
+
 - name: enable_pulseaudio
   command: systemctl --user enable pulseaudio.socket
 
