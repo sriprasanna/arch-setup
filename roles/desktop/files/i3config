@@ -40,6 +40,26 @@ bindsym $mod+d exec dmenu_run -fn '12x24'
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
+# Fancy names for workspaces
+set $w1 1: www
+set $w2 2: terminal
+set $w3 3: chat&mail
+set $w4 4
+set $w5 5
+set $w6 6
+set $w7 7
+set $w8 8
+set $w9 9
+set $w10 10
+
+## Assign section
+#assign [class="^firefox"] 1
+#assign [class="^URxvt$"] 2
+
+# i3 lock
+set $pictures_folder ~/pictures
+bindsym $mod+Ctrl+l exec i3lock -c 000000 -i $pictures_folder/i3lock.jpg -t
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
