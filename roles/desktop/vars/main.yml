@@ -1,7 +1,7 @@
 ---
 
 yaourt_packages:
-  - ['firefox', 'firefox-firebug', 'firefox-adblock-plus', 'chromium', 'flashplugin', 'dropbox', 'libreoffice-fresh', 'thunderbird', 'pidgin', 'gnupg', 'skype', 'vlc', 'pulseaudio', 'apulse', 'octave', 'mutt-sidebar', 'pavucontrol', 'ack', 'findutils', 'offlineimap', 'msmtp', 'profanity', 'imagemagick', 'urlview']
+  - ['firefox', 'firefox-firebug', 'firefox-adblock-plus', 'chromium', 'flashplugin', 'dropbox', 'libreoffice-fresh', 'thunderbird', 'pidgin', 'gnupg', 'skype', 'vlc', 'pulseaudio', 'apulse', 'octave', 'mutt-sidebar', 'pavucontrol', 'ack', 'findutils', 'offlineimap', 'msmtp', 'profanity', 'imagemagick', 'urlview', 'spotify']
 
 rc_files:
   - ['xinitrc', 'xbindkeysrc', 'Xresources']
