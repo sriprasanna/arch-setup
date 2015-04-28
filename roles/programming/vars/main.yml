@@ -1,7 +1,7 @@
 ---
 
 yaourt_packages:
-  - ['jdk8-openjdk', 'intellij-idea-community-edition', 'postgresql']
+  - ['jdk8-openjdk', 'intellij-idea-community-edition', 'postgresql', 'vagrant', 'virtualbox']
 
 enable_services:
   - ['postgresql']
