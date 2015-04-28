@@ -36,7 +36,7 @@
   file: path=/home/{{ username }}/.i3 state=directory
 
 - name: set_i3config
-  copy: src=i3config dest=/home/{{ username }}/.i3/config
+  template: src=i3config dest=/home/{{ username }}/.i3/config
 
 - name: create_i3blocks
   file: path=/home/{{ username }}/.config/i3/blocks state=directory

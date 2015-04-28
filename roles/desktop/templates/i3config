@@ -57,8 +57,7 @@ set $w10 10
 #assign [class="^URxvt$"] 2
 
 # i3 lock
-set $pictures_folder ~/pictures
-bindsym $mod+Ctrl+l exec i3lock -c 000000 -i $pictures_folder/i3lock.jpg -t
+bindsym $mod+Ctrl+l exec i3lock -c 000000 -i /home/{{ username }}/pictures/i3lock.jpg -t
 
 # change focus
 bindsym $mod+j focus left
