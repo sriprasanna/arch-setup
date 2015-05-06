@@ -45,44 +45,57 @@ URxvt.keysym.C-S-Down: perl:font-size:decglobal
 URxvt.keysym.Shift-Control-C: perl:clipboard:copy
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 
-!!Source http://github.com/altercation/solarized
+! color config here - https://gist.github.com/bohoomil/5253661
+!! euphrasia v2 by bohoomil
 
-*background: #002b36
-*foreground: #657b83
-!!*fading: 40
-*fadeColor: #002b36
-*cursorColor: #93a1a1
-*pointerColorBackground: #586e75
-*pointerColorForeground: #93a1a1
+! euphrasia fg/bg
+URxvt*background:  #090C19
+URxvt*foreground:  #E6E6E6
+URxvt*cursorColor: #1AAA13
 
-!! black dark/light
-*color0: #073642
-*color8: #002b36
+! X.org apps bg/fg
+*background: #D0CECB
+*foreground: #090C19
 
-!! red dark/light
-*color1: #dc322f
-*color9: #cb4b16
+! black
+*color0:  #222946
+! dark grey
+*color8:  #8C8B89
 
-!! green dark/light
-*color2: #859900
-*color10: #586e75
+! red
+*color1:  #B32323
+! bright red
+*color9:  #DC2C2C
 
-!! yellow dark/light
-*color3: #b58900
-*color11: #657b83
+! green
+*color2:  #1AAA13
+! bright green
+*color10: #5DCE33
 
-!! blue dark/light
-*color4: #268bd2
-*color12: #839496
+! yellow
+*color3:  #FF9F3E
+! bright yellow
+*color11: #E6CB29
 
-!! magenta dark/light
-*color5: #d33682
-*color13: #6c71c4
+! blue
+*color4:  #4957F3
+! bright blue
+*color12: #4D79FF
 
-!! cyan dark/light
-*color6: #2aa198
-*color14: #93a1a1
+! magenta
+*color5:  #BF3E94
+! bright magenta
+*color13: #B641CC
 
-!! white dark/light
-*color7: #eee8d5
-*color15: #fdf6e3
+! cyan
+*color6:  #09A5B3
+! bright cyan
+*color14: #3CB6F3
+
+! light grey
+*color7:  #AEAEAE
+! white
+*color15: #DBDDE4
+
+! Native Transparency
+URxvt*.transparent: true
