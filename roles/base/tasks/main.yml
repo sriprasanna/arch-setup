@@ -27,13 +27,13 @@
     - pacman_packages
 
 - name: create_group_admins
-  group: name=admins state=present
+  group: name={{ username }} state=present
 
 - name: create_user_{{ username }}
-  user: name={{ username }} shell=/usr/bin/fish groups=admins
+  user: name={{ username }} shell=/usr/bin/fish group={{ username }}
 
 - name: add_admins_to_sudoers
-  lineinfile: "dest=/etc/sudoers state=present regexp='^%admins' line='%admins ALL=(ALL) NOPASSWD: ALL'"
+  lineinfile: "dest=/etc/sudoers state=present regexp='^%{{ username }}' line='%{{ username }} ALL=(ALL) NOPASSWD: ALL'"
 
 - name: check_if_yaourt_packages_are_already_installed
   command: pacman -Q {{item}}
