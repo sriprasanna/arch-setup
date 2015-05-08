@@ -76,3 +76,8 @@
   command: systemctl --user start {{ item }}.service
   with_flattened:
     - user_configs
+
+- name: download_gpg_keyserver_cert
+  get_url: url=https://sks-keyservers.net/sks-keyservers.netCA.pem dest=/etc/ssl/certs/hkps.pool.sks-keyservers.net.pem mode=777 validate_certs=no
+  sudo: True
+
