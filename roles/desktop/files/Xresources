@@ -1,6 +1,11 @@
 !-------------------------------------------------------------------------------
 ! Xft settings
 !-------------------------------------------------------------------------------
+Xft.dpi:                    160
+Xft.antialias:              1
+Xft.hinting:                1
+Xft.hintstyle:              hintfull
+Xft.rgba:                   rgb
 URxvt*buffered:             true
 URxvt*cursorBlink:          true
 URxvt*font:                 xft:Inconsolata\ for\ Powerline:pixelsize=26:antialias=true,xft:dejavu:size=16:antialias=true:hinting=true
