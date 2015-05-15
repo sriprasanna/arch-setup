@@ -30,7 +30,7 @@
   group: name={{ username }} state=present
 
 - name: create_user_{{ username }}
-  user: name={{ username }} shell=/usr/bin/fish group={{ username }}
+  user: name={{ username }} shell=/usr/bin/fish groups={{ username }},input
 
 - name: add_admins_to_sudoers
   lineinfile: "dest=/etc/sudoers state=present regexp='^%{{ username }}' line='%{{ username }} ALL=(ALL) NOPASSWD: ALL'"
