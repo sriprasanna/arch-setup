@@ -1,2 +1,6 @@
-keycode 94 = asciitilde grave
+keycode 94 = grave asciitilde
 keycode 49 = less greater
+keycode 133 = Meta_L
+keycode 134 = Meta_R
+
+add mod4 = Super_L
