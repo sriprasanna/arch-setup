@@ -79,6 +79,9 @@
 - name: set_asound
   copy: src=asound.conf dest=/etc/asound.conf
 
+- name: libtool_finish_input
+  command: libtool --finish /usr/lib/xorg/modules/input
+
 - name: check_if_bootstrapped
   shell: cat /etc/mkinitcpio.conf | grep nouveau
   register: bootstrapped
