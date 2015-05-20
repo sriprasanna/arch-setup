@@ -30,3 +30,14 @@
 
 - name: clone_ruby_build
   git: repo=git://github.com/sstephenson/ruby-build.git dest=/home/{{ username }}/.rbenv/plugins/ruby-build
+
+- name: install_vagrant_packages
+  command: vagrant plugin install vagrant-vbguest vagrant-share
+
+- name: load_vbox_kernel_module
+  copy: src=virtualbox.conf dest=/etc/modules-load.d/virtualbox.conf
+  sudo: yes
+
+- name: add_user_to_vboxusers
+  user: name={{ username }} groups=vboxusers,input,snark
+  sudo: yes
