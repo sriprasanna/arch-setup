@@ -32,7 +32,7 @@
   git: repo=git://github.com/sstephenson/ruby-build.git dest=/home/{{ username }}/.rbenv/plugins/ruby-build
 
 - name: install_vagrant_packages
-  command: vagrant plugin install vagrant-vbguest vagrant-share
+  command: vagrant plugin install vagrant-share
 
 - name: load_vbox_kernel_module
   copy: src=virtualbox.conf dest=/etc/modules-load.d/virtualbox.conf
