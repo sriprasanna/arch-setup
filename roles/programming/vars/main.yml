@@ -4,4 +4,4 @@ yaourt_packages:
   - ['jdk8-openjdk', 'intellij-idea-community-edition', 'postgresql', 'vagrant', 'virtualbox', 'virtualbox-host-modules', 'virtualbox-guest-iso', 'meteorjs', 'couchdb']
 
 enable_services:
-  - ['postgresql', 'couchdb']
+  - ['postgresql']
