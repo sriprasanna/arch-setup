@@ -45,6 +45,7 @@
 - name: remove_conflicting_packages
   command: yaourt -Rdd {{ item }} --noconfirm
   with_items: yaourt_conflicting_packages
+  ignore_errors: yes
 
 - name: install_package_if_necessary
   command: yaourt -S {{item.item}} --noconfirm
