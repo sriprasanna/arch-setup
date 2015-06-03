@@ -42,6 +42,10 @@
   ignore_errors: yes
   changed_when: "packages_presence|failed"
 
+- name: remove_conflicting_packages
+  command: yaourt -Rdd {{ item }} --noconfirm
+  with_items: yaourt_conflicting_packages
+
 - name: install_package_if_necessary
   command: yaourt -S {{item.item}} --noconfirm
   sudo_user: "{{ username }}"
