@@ -21,4 +21,4 @@ modconf_files:
   - ['i915', 'snd_hda_intel', 'usbcore']
 
 xorg_files:
-  - ['60-mtrack', '10-keymap', '20-nouveau']
+  - ['60-mtrack', '10-keymap', '20-intel']
