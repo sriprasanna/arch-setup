@@ -1,10 +1,10 @@
-"amixer set Master playback 5%+"
+"/usr/bin/pulseaudio-ctl up"
     XF86AudioRaiseVolume
 
-"amixer set Master playback 5%-"
+"/usr/bin/pulseaudio-ctl down"
     XF86AudioLowerVolume
 
-"amixer set Master toggle"
+"/usr/bin/pulseaudio-ctl mute"
     XF86AudioMute
 
 "/usr/bin/bl-brightness down"
