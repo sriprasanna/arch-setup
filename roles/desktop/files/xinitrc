@@ -1,6 +1,8 @@
+#!/bin/sh
+
 xmodmap ~/.Xmodmap
 xbindkeys
-xrdb ~/.Xresources
+[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 /usr/bin/start-pulseaudio-x11 &
 dispad &
 dropbox &
