@@ -6,7 +6,6 @@ xbindkeys
 dispad &
 dropbox &
 sudo sh /etc/profile.d/keyboard-permissions.sh
-exec i3
-[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
-xrandr --dpi 184
+xrdb -merge -I$HOME ~/.Xresources &
 wine ~/.wine/drive_c/Program\ Files\ \(x86\)/1Password\ 4/Agile1pAgent.exe &
+exec i3
