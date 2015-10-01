@@ -1,7 +1,7 @@
 ---
 
 yaourt_packages:
-  - ['firefox', 'chromium', 'flashplugin', 'dropbox', 'libreoffice-fresh', 'pidgin', 'gnupg', 'skype', 'vlc', 'pulseaudio', 'pulseaudio-ctl', 'apulse', 'octave', 'mutt-sidebar', 'pavucontrol', 'ack', 'findutils', 'offlineimap', 'msmtp', 'profanity', 'imagemagick', 'urlview', 'spotify', 'sshuttle', 'otf-inconsolata-dz-powerline-git', 'otf-inconsolata-powerline-git', 'links', 'ttf-mac-fonts', 'feh', 'weechat', 'hub', 'goobook-git', 'atom-editor', 'wine']
+  - ['firefox', 'chromium', 'flashplugin', 'dropbox', 'libreoffice-fresh', 'pidgin', 'gnupg', 'skype', 'vlc', 'pulseaudio', 'pulseaudio-ctl', 'apulse', 'octave', 'mutt-sidebar', 'pavucontrol', 'ack', 'findutils', 'offlineimap', 'msmtp', 'profanity', 'imagemagick', 'urlview', 'spotify', 'sshuttle', 'otf-inconsolata-dz-powerline-git', 'otf-inconsolata-powerline-git', 'links', 'ttf-mac-fonts', 'feh', 'weechat', 'hub', 'goobook-git', 'atom-editor', 'wine', 'ynab4']
 
 rc_files:
   - ['xinitrc', 'xbindkeysrc', 'Xresources', 'Xmodmap']
